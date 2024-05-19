@@ -20,7 +20,7 @@ type GLTFResult = GLTF & {
 type ContextType = Record<string, React.ForwardRefExoticComponent<JSX.IntrinsicElements['mesh']>>
 
 export default function Render(props: JSX.IntrinsicElements['group']) {
-    const { nodes } = useGLTF('./circles-profile/public/circles.glb') as GLTFResult
+    const { nodes } = useGLTF('./public/circles.glb') as GLTFResult
     const [ circle1, circle2, circle3, circle4, circle5, circle6 ] = useRefs<any>();
     
     useFrame(() => {
@@ -121,4 +121,4 @@ export default function Render(props: JSX.IntrinsicElements['group']) {
     )
 }
 
-useGLTF.preload('./circles-profile/public/circles.glb')
+useGLTF.preload('./public/circles.glb')
