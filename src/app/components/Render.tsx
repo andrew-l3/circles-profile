@@ -1,10 +1,27 @@
+import * as THREE from 'three'
 import useRefs from "react-use-refs";
 import { useFrame } from '@react-three/fiber'
+import { GLTF } from 'three-stdlib'
 import { useGLTF, Text, MeshTransmissionMaterial } from "@react-three/drei";
 
-export default function Render(props: any) {
-    const { nodes } = useGLTF('./circles.glb')
-    const [ circle1, circle2, circle3, circle4, circle5, circle6 ] = useRefs<any>(null);
+type GLTFResult = GLTF & {
+    nodes: {
+        Cylinder002: THREE.Mesh,
+        Cylinder003: THREE.Mesh,
+        Cylinder004: THREE.Mesh,
+        Cylinder005: THREE.Mesh,
+        Cylinder010: THREE.Mesh,
+        Cylinder011: THREE.Mesh,
+    }
+    materials: {}
+//    animations: GLTFAction[]
+}
+
+  type ContextType = Record<string, React.ForwardRefExoticComponent<JSX.IntrinsicElements['mesh']>>
+
+export default function Render(props: JSX.IntrinsicElements['group']) {
+    const { nodes } = useGLTF('/circles.glb') as GLTFResult
+    const [ circle1, circle2, circle3, circle4, circle5, circle6 ] = useRefs<any>();
     
     useFrame(() => {
         circle1.current.rotation.x += 0.02
@@ -32,7 +49,7 @@ export default function Render(props: any) {
     return (
         <group {...props} dispose={null}>
             <Text font={'../Switzer-Variable.woff'} position={[0, 0, -1]} fontSize={2.5} letterSpacing={-0.02} color="white">
-            Hey, it's me.
+            {'Hey, it\'s me.'}
             </Text>
             <mesh ref={circle1}
                 castShadow
