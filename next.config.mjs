@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    basePath: "/",
+    basePath: "/circles-profile",
     output: "export",
     reactStrictMode: true,
 };
