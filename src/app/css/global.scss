@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+$font-stack: 'Switzer-Variable';
+$btn-color: #3a76f8;
+$background: #f7f7f7;
+$link-hover: #212121;
+
+$bp: (
+    mobile: '(max-width: 500px)', //479
+    tablet: '(max-width: 1199px)', //958
+    desktop: '(min-width: 1200px)', //959
+); 
+
+@mixin device($device) {
+    $restrict: map-get($bp, $device);
+    @media #{$restrict} {
+        @content;
+    }
+}
+
+@font-face {
+    font-family: 'Switzer-Variable';
+    src: url('../fonts/Switzer-Variable.woff2') format('woff2'),
+         url('../fonts/Switzer-Variable.woff') format('woff'),
+         url('../fonts/Switzer-Variable.ttf') format('truetype');
+         font-weight: 100 900;
+         font-display: swap;
+         font-style: normal;
+  }
+
+@mixin flex($direction) {
+    display: flex;
+    flex-direction: $direction;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin font($family, $size, $weight, $spacing, $color) {
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+    letter-spacing: $spacing;
+    color: $color;
+}
+
+@mixin background($url, $cover, $range, $repeat, $position, $top, $height, $width, $blend, $opacity, $index) {
+    content: '';
+    background-image: url($url);
+    background-size: $cover;
+    background-position: $range;
+    background-repeat: $repeat;
+    position: $position; top: $top;
+    height: $height; width: $width;
+    mix-blend-mode: $blend;
+    opacity: $opacity; z-index: $index;
+    pointer-events: none;
+}
+
+body::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 0; height: 0;
+}
+
+body {
+    background-color: #000;
+}
+
+.home:before {
+    @include background("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 600'%3E%3Cfilter id='a'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23a)'/%3E%3C/svg%3E", inherit, inherit, repeat, fixed, inherit, 100%, 100%, inherit, 0.12, 0);
+}
+
+a {
+    transition: 0.25s ease-in-out;
+}

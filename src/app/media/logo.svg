@@ -1,0 +1,15 @@
+<svg width="175" height="140" viewBox="0 0 175 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g style="mix-blend-mode:color-burn">
+<circle cx="105" cy="70" r="70" fill="#353434"/>
+</g>
+<circle cx="65" cy="70" r="50" fill="#D9D9D9"/>
+<g style="mix-blend-mode:difference">
+<circle cx="100" cy="105" r="15" fill="#BABABA"/>
+</g>
+<g style="mix-blend-mode:exclusion">
+<circle cx="15" cy="55" r="15" fill="white" fill-opacity="0.5"/>
+</g>
+<g style="mix-blend-mode:luminosity">
+<circle cx="57" cy="67" r="38" fill="white" fill-opacity="0.5"/>
+</g>
+</svg>

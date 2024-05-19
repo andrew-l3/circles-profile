@@ -1,0 +1,61 @@
+@import 'global';
+
+.cnv {
+    mix-blend-mode: hard-light;
+    filter: brightness(1);
+}
+
+.hro-txt {
+    font-family: $font-stack;
+    color: white;
+    font-size: 80px;
+    font-weight: 400;
+    letter-spacing: -2px;
+    line-height: 1.07;
+}
+
+.sc {
+    display: flex;
+    height: calc(100vh - 108px);
+    width: 100vw;
+    margin: 0 auto;
+    left: 0%;
+    top: 6%;
+    cursor: pointer;
+}
+
+.hero-info {
+    position: absolute;
+    bottom: 7%;
+    border-radius: 30px;
+    background-color: #111111;
+    filter: blur(2px);
+    cursor: pointer;
+    z-index: 1;
+}
+
+.sc:hover + .hero-info, .hero-info:hover {
+    filter: blur(0);
+    transition: ease-in-out filter 0.25s;
+}
+
+.feature-sub {
+    font-family: $font-stack;
+    color: rgba(255, 255, 255, 0.35);
+    font-size: 15.5px;
+    font-weight: 340;
+    line-height: 1.8;
+    letter-spacing: 0px;
+}
+
+.rad {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    background-size: 100% 100%;
+    background-position: 0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px,0px 0px;
+    background-image: radial-gradient(18% 28% at 24% 50%, #291B02FF 7%, #073AFF00 100%),radial-gradient(18% 28% at 18% 71%, #000000FF 6%, #073AFF00 100%),radial-gradient(70% 53% at 36% 76%, #000000FF 0%, #073AFF00 100%),radial-gradient(42% 53% at 15% 94%, #000000FF 7%, #073AFF00 100%),radial-gradient(42% 53% at 34% 72%, #000000FF 7%, #073AFF00 100%),radial-gradient(18% 28% at 35% 87%, #000000FF 7%, #00000000 100%),radial-gradient(31% 43% at 7% 98%, #000000FF 24%, #073AFF00 100%),radial-gradient(21% 37% at 72% 23%, #01212CF5 24%, #073AFF00 100%),radial-gradient(35% 56% at 91% 74%, #012211FF 9%, #073AFF00 100%),radial-gradient(74% 86% at 67% 38%, #410006F5 0%, #073AFF00 100%),linear-gradient(125deg, #000000FF 1%, #000000FF 100%);
+    opacity: 0.77;
+    mix-blend-mode: color;
+}
