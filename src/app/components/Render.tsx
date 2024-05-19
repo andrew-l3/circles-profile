@@ -48,7 +48,7 @@ export default function Render(props: JSX.IntrinsicElements['group']) {
 
     return (
         <group {...props} dispose={null}>
-            <Text font={'../Switzer-Variable.woff'} position={[0, 0, -1]} fontSize={2.5} letterSpacing={-0.02} color="white">
+            <Text font={'./Switzer-Variable.woff'} position={[0, 0, -1]} fontSize={2.5} letterSpacing={-0.02} color="white">
             {'Hey, it\'s me.'}
             </Text>
             <mesh ref={circle1}
