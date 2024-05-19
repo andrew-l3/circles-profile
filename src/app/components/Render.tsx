@@ -17,10 +17,10 @@ type GLTFResult = GLTF & {
 //    animations: GLTFAction[]
 }
 
-  type ContextType = Record<string, React.ForwardRefExoticComponent<JSX.IntrinsicElements['mesh']>>
+type ContextType = Record<string, React.ForwardRefExoticComponent<JSX.IntrinsicElements['mesh']>>
 
 export default function Render(props: JSX.IntrinsicElements['group']) {
-    const { nodes } = useGLTF('/circles.glb') as GLTFResult
+    const { nodes } = useGLTF('../circles.glb') as GLTFResult
     const [ circle1, circle2, circle3, circle4, circle5, circle6 ] = useRefs<any>();
     
     useFrame(() => {
