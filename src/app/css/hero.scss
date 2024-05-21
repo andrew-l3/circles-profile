@@ -1,5 +1,16 @@
 @import 'global';
 
+.plh {
+    font-family: $font-stack;
+    color: #fff;
+    font-size: 15.63rem;
+    letter-spacing: -0.2rem;
+    opacity: 0.5;
+    font-weight: 370;
+    overflow: visible;
+    white-space: nowrap;
+}
+
 .cnv {
     mix-blend-mode: hard-light;
     filter: brightness(1);

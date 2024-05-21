@@ -1,8 +1,14 @@
-export const navLinks = [
+export type navType = {
+  id: number;
+  title: string;
+  link: string;
+};
+
+export const navLinks: navType[] = [
   {
     id: 1,
     title: 'Home',
-    link: '/',
+    link: '/circles-profile',
   },
   {
     id: 2,
@@ -17,21 +23,6 @@ export const navLinks = [
   {
     id: 4,
     title: 'Contact',
-    link: '/',
-  }
-]
-
-export const secLinks = [
-  {
-    title: 'Options',
-    link: '/#',
-  },
-  {
-    title: 'Info',
-    link: '/#',
-  },
-  {
-    title: 'Partners',
-    link: '/#',
+    link: '/circles-profile',
   }
 ]

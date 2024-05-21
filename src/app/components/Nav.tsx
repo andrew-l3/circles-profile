@@ -14,7 +14,7 @@ function Nav() {
                     <label className='hamburger_menu'>
                         <input type='checkbox'></input>
                         <div className='nav_buttons'>
-                            <div className="flex space-x-5">
+                            <div className="nav_top flex space-x-5">
                                 {navLinks.map((nav) => {
                                     return (
                                         <a

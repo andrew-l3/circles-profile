@@ -1,7 +1,5 @@
 @import 'global';
 
-$link-color: #717171;
-
 .nav_header {
     display: flex;
     position: relative;
@@ -17,7 +15,7 @@ $link-color: #717171;
 
 .navbar {
     display: flex;
-    justify-content: center; //space-between
+    justify-content: center;
     align-items: center;
     width: 85vw;
     margin-top: calc(32px + 32px);
@@ -25,6 +23,7 @@ $link-color: #717171;
 
     @include device(tablet) {
         width: calc(100% - 18px);
+        justify-content: end;
     }
 }
 
@@ -43,94 +42,49 @@ $link-color: #717171;
     }
 }
 
-.cta_links a {
-    background-color: #ffffff;
-    color: #000000;
-    border-radius: 30px;
-    padding: 15px 17px;
-    font-size: 14px;
-
-    @include font($font-stack, 14.5px, 380, inherit, #000000);
-
-    &:hover {
-        background-color: $btn-color;
-        color: #fff;
-    }
-
-    @include device(tablet) {
-        padding: 0;
-        background-color: transparent;
-        color: $link-color;
-    }
-}
-
 .nav_buttons {
     display: flex;
     gap: 20px;
 
     a {
-        @include font($font-stack, 13.5px, 310, inherit, none);
+        @include font($font-stack, 13.5px, 310, inherit, inherit);
+    }
+
+    a:not(a:nth-child(1)) {
+        color: #fff;
     }
 
     @include device(tablet) {
-        flex-direction: column;
         gap: 14px;
-        background-color: #000;
-        border-radius: 14px;
-        align-items: flex-start;
-        justify-content: center;
-        padding: 54px 44px 44px 44px;
-        position: fixed;
-        top: calc(-48px + 22vh + 10px);
-        left: 9px;
-        width: calc(100vw - 107px);
         overflow: hidden;
         visibility: hidden;
         opacity: 0;
         transition: visibility 0.25s, opacity 0.25s ease-in-out;
 
-        &:before {
-            content: '\f149';
-            font-family: 'bootstrap-icons';
-            color: #ffffffc6;
-            position: absolute;
-            top: 24px;
-            right: 20px;
-        }
+        .nav_top {
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 14px;
 
-        &:after {
-            content: '';
-            position: fixed;
-            background-color: rgba(1, 0, 120, 0.79);
-            top: 0; left: 0;
-            height: 100%; width: 100%;
-            z-index: -1;
-        }
+            a {
+                @include font($font-stack, 13.5px, 210, inherit, #fff);
+                background-color: unset;
+            }
+            
+            &:after {
+                content: '';
+                position: fixed;
+                background-color: rgba(15, 15, 15, 0.79);
+                top: 0; left: 0;
+                height: 100%; width: 100%;
+                z-index: -1;
+            }
 
+        }
     }
 }
 
 .nav_links {
-    & a:nth-child(1) {
-
-        @include device(tablet) {
-            background-color: transparent;
-            color: $link-color;
-        }
-    }
-
-    & a:not(:nth-child(6)):hover {
-        background-color: $btn-color;
-        color: #fff;
-        border-radius: 50px;
-    }
-
-    @include device(desktop) {
-        & a:nth-child(n+1):not(:nth-child(6)) {
-            margin-left: 4px;
-        }
-    }
-
     @include device(tablet) {
         display: flex;
         flex-direction: column;
@@ -149,50 +103,6 @@ $link-color: #717171;
         padding-top: 20px;
         transform: scale(0.8);
         transform-origin: left;
-        
-        a:nth-child(1) i {
-            font-size: 18px;
-            padding-right: 16px;
-        }
-        a:nth-child(2) i {
-            font-size: 20px;
-            position: relative;
-            top: 1px;
-            padding-right: 18px;
-        }
-        a:is(:nth-child(3), :nth-child(4)) i {
-            font-size: 18px;
-            padding-right: 18px;
-        }
-        a:nth-child(5) i {
-            font-size: 18px;
-            position: relative;
-            top: -1px;
-            padding-right: 18px;
-        }
-        a:nth-child(6) i {
-            font-size: 18px;
-            position: relative;
-            top: 0.2px;
-            padding-right: 18px;
-        }
-        a:nth-child(7) i {
-            font-size: 18px;
-            position: relative;
-            top: -1.5px;
-            padding-right: 17px;
-        }
-        a:nth-child(8) i {
-            font-size: 18px;
-            position: relative;
-            top: -2px;
-            padding-right: 16px;
-        }
-        a:nth-child(9) i {
-            font-size: 22px;
-            position: relative;
-            top: -0.5px;
-        }
     }
 }
 
@@ -216,7 +126,7 @@ $link-color: #717171;
             width: 26px;
             height: 3px;
             border-radius: 30px;
-            background-color: $link-hover;
+            background-color: #fff;
             position: relative;
         }
 
@@ -226,7 +136,7 @@ $link-color: #717171;
             width: 18px;
             height: 3px;
             border-radius: 30px;
-            background-color: $link-hover;
+            background-color: #fff;
             appearance: none;
             padding: 0;
             margin: 0;
@@ -244,11 +154,15 @@ $link-color: #717171;
 
         .nav_buttons a {
             font-size: 26px;
-            font-weight: 300;
+            font-weight: 350;
             padding: 0;
             color: #ffffffc6;
 
             @include device(tablet) {
+                &:nth-child(1) {
+                    padding-top: 3rem;
+                }
+
                 &:hover {
                     color: #fff;
                     background-color: initial;
